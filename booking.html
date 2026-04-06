@@ -39,21 +39,23 @@
         <br />
 
         <form>
-          <input class="data" type="text" placeholder="Name *" required />
+          <input id="name" class="data" type="text" placeholder="Name *" required />
 
-          <input class="data" type="email" placeholder="Email (Optional)" />
+          <input id="email" class="data" type="email" placeholder="Email (Optional)" />
 
           <input
+            id="phone"
             class="data"
             type="tel"
             placeholder="Mobile Number *"
             required
           />
 
-          <input class="data" type="text" placeholder="Locality" />
+          <input id="locality" class="data" type="text" placeholder="Locality" />
 
           <label>Gender</label>
-          <select>
+          <select id="gender">
+            <option disabled selected>Select Gender</option>
             <option>Male</option>
             <option>Female</option>
             <option>Other</option>
@@ -70,22 +72,22 @@
             </button>
 
             <div class="dropdown-list" id="servicesList">
-              <label><input type="checkbox" /> Haircut</label>
-              <label><input type="checkbox" /> Beard Trim</label>
-              <label><input type="checkbox" /> Hair Styling</label>
-              <label><input type="checkbox" /> Facial</label>
-              <label><input type="checkbox" /> Head Massage</label>
-              <label><input type="checkbox" /> Hair Color</label>
+              <label><input type="checkbox" name="service1" value="Haircut"/> Haircut</label>
+              <label><input type="checkbox" name="service1" value="Beard Trim"/> Beard Trim</label>
+              <label><input type="checkbox" name="service1" value="Hair Styling"/> Hair Styling</label>
+              <label><input type="checkbox" name="service1" value="Facial"/> Facial</label>
+              <label><input type="checkbox" name="service1" value="Head Massage"/> Head Massage</label>
+              <label><input type="checkbox" name="service1" value="Hair Color"/> Hair Color</label>
             </div>
           </div>
 
           <label>Select Appointment Date</label>
-          <input type="date" class="data" />
+          <input id="date" type="date" class="data" required/>
 
           <label>Select Appointment Time</label>
-          <input type="time" class="data" />
+          <input id="time" type="time" class="data" required/>
 
-          <button class="data-transfer" type="submit">
+          <button class="data-transfer" type="button" onclick="sendBooking1()">
             Book Appointment 📅
           </button>
         </form>
@@ -128,7 +130,7 @@
               Choose Services
             </button>
 
-            <div class="dropdown-list" id="servicesList">
+            <div class="dropdown-list" id="servicesList2">
               <label><input type="checkbox" /> Haircut</label>
               <label><input type="checkbox" /> Beard Trim</label>
               <label><input type="checkbox" /> Hair Styling</label>
