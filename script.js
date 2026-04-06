@@ -144,6 +144,6 @@ let whatsappURL =
 
 // open WhatsApp chat
 
-window.open(whatsappURL, "_blank");
+window.location.href = whatsappURL;
 
 }
