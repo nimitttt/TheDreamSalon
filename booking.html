@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking Selection</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <a href="index.html" id="title">The Dream Salon</a>
+        <i class="fa-solid fa-bars" id="openMenu"></i>
+        <div id="menu" class="hidden">
+          <a href="index.html" class="menu-option">Home</a>
+          <hr />
+          <a href="gallary.html" class="menu-option">Gallary</a>
+          <hr />
+          <a href="booking.html" class="menu-option">Booking</a>
+          <hr />
+          <a href="services.html" class="menu-option">Services</a>
+          <hr />
+          <a href="contact.html" class="menu-option">Contact</a>
+        </div>
+      </nav>
+    </header>
+    <main class="book-main">
+      <!-- Normal booking -->
+
+      <div class="form-container">
+        <h2 class="book-title">Book Appointment ✂️</h2>
+        <br />
+
+        <form>
+          <input class="data" type="text" placeholder="Name *" required />
+
+          <input class="data" type="email" placeholder="Email (Optional)" />
+
+          <input
+            class="data"
+            type="tel"
+            placeholder="Mobile Number *"
+            required
+          />
+
+          <input class="data" type="text" placeholder="Locality" />
+
+          <label>Gender</label>
+          <select>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+
+          <label id="service-selector">Select Services</label>
+          <div class="dropdown-container">
+            <button
+              type="button"
+              class="dropdown-btn"
+              onclick="toggleServices()"
+            >
+              Choose Services
+            </button>
+
+            <div class="dropdown-list" id="servicesList">
+              <label><input type="checkbox" /> Haircut</label>
+              <label><input type="checkbox" /> Beard Trim</label>
+              <label><input type="checkbox" /> Hair Styling</label>
+              <label><input type="checkbox" /> Facial</label>
+              <label><input type="checkbox" /> Head Massage</label>
+              <label><input type="checkbox" /> Hair Color</label>
+            </div>
+          </div>
+
+          <label>Select Appointment Date</label>
+          <input type="date" class="data" />
+
+          <label>Select Appointment Time</label>
+          <input type="time" class="data" />
+
+          <button class="data-transfer" type="submit">
+            Book Appointment 📅
+          </button>
+        </form>
+      </div>
+
+      <!-- Bridal Booking -->
+
+      <div class="form-container">
+        <h2 class="book-title">Bridal Appointment </h2>
+        <br />
+
+        <form>
+          <input class="data" type="text" placeholder="Name *" required />
+
+          <input class="data" type="email" placeholder="Email (Optional)" />
+
+          <input
+            class="data"
+            type="tel"
+            placeholder="Mobile Number *"
+            required
+          />
+
+          <input class="data" type="text" placeholder="Locality" />
+
+          <label>Gender</label>
+          <select>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+
+          <label id="service-selector">Select Services</label>
+          <div class="dropdown-container">
+            <button
+              type="button"
+              class="dropdown-btn"
+              onclick="toggleServices()"
+            >
+              Choose Services
+            </button>
+
+            <div class="dropdown-list" id="servicesList">
+              <label><input type="checkbox" /> Haircut</label>
+              <label><input type="checkbox" /> Beard Trim</label>
+              <label><input type="checkbox" /> Hair Styling</label>
+              <label><input type="checkbox" /> Facial</label>
+              <label><input type="checkbox" /> Head Massage</label>
+              <label><input type="checkbox" /> Hair Color</label>
+            </div>
+          </div>
+
+          <label>Select Appointment Date</label>
+          <input type="date" class="data" />
+
+          <label>Select Appointment Time</label>
+          <input type="time" class="data" />
+
+          <button class="data-transfer" type="submit">
+            Book Appointment 📅
+          </button>
+        </form>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
