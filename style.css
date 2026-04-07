@@ -42,6 +42,22 @@
 body {
   background-color: #81a6c6;
   overflow-x: hidden;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 header {
@@ -74,6 +90,8 @@ header {
   font-size: 30px;
   color: white;
   text-decoration: none;
+  justify-self: center;
+  align-self: center;
 }
 
 #openMenu {
@@ -120,7 +138,6 @@ hr {
 main {
   width: 100%;
   z-index: 0;
-  background-color: #81a6c6;
 }
 
 /* hero section */
@@ -135,8 +152,9 @@ main {
 
 .herotext {
   font-size: 35px;
-  color: #36454f;
+  color: black;
   text-align: center;
+  text-shadow: 0px 0px 2px black;
 }
 
 /* product carousel */
@@ -179,7 +197,6 @@ main {
 .transition {
   margin: auto;
   width: 90%;
-  background-color: white;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -188,6 +205,11 @@ main {
   border-radius: 45px;
   position: relative;
   top: -40px;
+  background: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .transition img {
@@ -241,9 +263,13 @@ main {
   top: 55px;
 }
 
-.gal-nav {
+.nav {
   background-color: #111111;
   height: 50px;
+}
+
+#titleall {
+  margin-top: 10px;
 }
 
 .gallary {
@@ -259,7 +285,7 @@ main {
   border-radius: 15px;
   margin-top: 5px;
   margin-bottom: 5px;
-  box-shadow: 0px 0px 10px rgb(121, 114, 114);
+  box-shadow: 0px 0px 10px grey;
 }
 .gal-main {
   position: absolute;
@@ -296,10 +322,13 @@ main {
   width: 350px;
   margin: auto;
   margin-top: 10px;
-  background: white;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .book-title {
@@ -310,12 +339,17 @@ label {
   font-weight: bold;
 }
 
+.data::placeholder {
+  color: #111111;
+}
+
 .data {
   width: 95%;
   padding: 8px;
   margin: 8px 0 15px 0;
   border-radius: 5px;
   border: 1px solid #ccc;
+  opacity: 0.5;
 }
 
 select {
@@ -324,6 +358,7 @@ select {
   margin: 8px 0 15px 0;
   border-radius: 5px;
   border: 1px solid #ccc;
+  opacity: 0.5;
 }
 
 .data-transfer {
@@ -354,6 +389,7 @@ select {
   cursor: pointer;
   width: 100%;
   text-align: left;
+  opacity: 0.5;
 }
 
 .dropdown-list {
@@ -372,4 +408,77 @@ select {
 .dropdown-list label {
   display: block;
   margin-bottom: 5px;
+}
+
+/* contact page */
+
+.cont-main {
+  position: absolute;
+  top: 70px;
+}
+
+.contact {
+  width: 90%;
+  height: 100px;
+  margin: auto;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.contact h3 {
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+.contact p {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.contact p a {
+  text-decoration: none;
+  color: white;
+}
+
+#instagram {
+  color: #f9ce34;
+  background-image: linear-gradient(90deg, #f9ce34 , #ee2a7b 50%, #6228d7 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient 10s linear infinite;
+}
+
+.location {
+  width: 90%;
+  height: 300px;
+  margin: auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.location h3 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.location iframe{
+  width:100%;
+  height:250px;
+  border:0;
+  border-radius: 10px;
 }
