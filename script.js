@@ -11,44 +11,6 @@ window.addEventListener("scroll", function () {
   }
 });
 
-// menu open script
-
-const button = document.getElementById("openMenu");
-const menu = document.getElementById("menu");
-
-button.addEventListener("click", function (event) {
-  event.stopPropagation();
-  menu.classList.toggle("hidden");
-  menu.classList.toggle("show");
-});
-
-menu.addEventListener("click", function (event) {
-  event.stopPropagation();
-});
-
-document.addEventListener("click", function () {
-  menu.classList.remove("show");
-  menu.classList.add("hidden");
-});
-
-const options = document.querySelectorAll(".menu-option");
-
-options.forEach((option) => {
-  option.addEventListener("click", function () {
-    menu.classList.add("hidden");
-  });
-});
-
-function toggleServices() {
-  const list = document.getElementById("servicesList");
-
-  if (list.style.display === "block") {
-    list.style.display = "none";
-  } else {
-    list.style.display = "block";
-  }
-}
-
 // booking form script
 
 // Toggle services dropdown (first form only)
@@ -147,3 +109,50 @@ let whatsappURL =
 window.location.href = whatsappURL;
 
 }
+
+// hamburger menu Animation
+
+const menuBtn = document.getElementById("menu-btn");
+const menu = document.getElementById("menu");
+
+if (menuBtn) {
+  menuBtn.addEventListener("click", function (event) {
+    event.stopPropagation();
+
+    menuBtn.classList.toggle("is-active");
+
+    menu.classList.toggle("hidden");
+
+    menu.classList.toggle("show");
+  });
+}
+
+if (menu) {
+  menu.addEventListener("click", function (event) {
+    event.stopPropagation();
+  });
+}
+
+document.addEventListener("click", function () {
+  if (menu) {
+    menu.classList.remove("show");
+
+    menu.classList.add("hidden");
+  }
+
+  if (menuBtn) {
+    menuBtn.classList.remove("is-active");
+  }
+});
+
+const options = document.querySelectorAll(".menu-option");
+
+options.forEach((option) => {
+  option.addEventListener("click", function () {
+    menu.classList.add("hidden");
+
+    menu.classList.remove("show");
+
+    menuBtn.classList.remove("is-active");
+  });
+});
