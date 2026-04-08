@@ -105,7 +105,6 @@ header {
 #menu {
   width: 150px;
   height: 210px;
-  background-color: #111111;
   position: absolute;
   top: 70px;
   right: 20px;
@@ -114,6 +113,12 @@ header {
   gap: 10px;
   align-items: center;
   justify-content: center;
+  background: rgba(41, 38, 38, 0.5);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-weight: bold;
 }
 
 .hidden {
@@ -131,6 +136,15 @@ header {
 
 hr {
   width: 20px;
+}
+
+nav button {
+  height: 30px;
+  width: 30px;
+  margin-right: 20px;
+  /* background-color: black; */
+   border: none; 
+  color: white;
 }
 
 /* main */
