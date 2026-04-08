@@ -12,12 +12,17 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link href="dist/hamburgers.css" rel="stylesheet" />
   </head>
   <body>
     <header>
       <nav class="home-nav">
         <a href="index.html" id="title">The Dream Salon</a>
-        <i class="fa-solid fa-bars" id="openMenu"></i>
+        <button class="hamburger hamburger--spin" id="menu-btn" type="button">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
         <div id="menu" class="hidden">
           <a href="index.html" class="menu-option">Home</a>
           <hr />
