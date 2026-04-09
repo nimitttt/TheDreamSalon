@@ -70,6 +70,10 @@ header {
 
 /* navigation bar */
 
+#logo {
+  height: 40px;
+}
+
 .home-nav {
   height: 50px;
   width: 100%;
@@ -143,7 +147,7 @@ nav button {
   width: 30px;
   margin-right: 20px;
   /* background-color: black; */
-   border: none; 
+  border: none;
   color: white;
 }
 
@@ -385,6 +389,74 @@ select {
   opacity: 0.5;
 }
 
+#servicesContainer {
+  width: 95%;
+  min-height: 15px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 8px;
+  margin: 8px 0 15px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#servicesContainer label {
+  cursor: pointer;
+}
+
+.bride-date {
+  width: 35%;
+  padding: 8px;
+  margin: 8px 0 15px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  opacity: 0.5;
+  display: inline-block;
+}
+
+.fun-name {
+  width: 50%;
+  padding: 8px;
+  margin: 8px 0 15px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  opacity: 0.5;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.add-date {
+  width: 80%;
+  padding: 8px;
+  margin: 8px 0 15px 0;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(224, 224, 224);
+  color: #111111;
+  /* margin-left: 40px; */
+}
+
+.add-date:hover {
+  background-color: #77dd77;
+  border: 2px solid black;
+}
+
+.remove {
+  width: 60%;
+  padding: 8px;
+  margin: 8px 0 15px 0;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(224, 224, 224);
+  color: #111111;
+  /* margin-left: 70px; */
+}
+
+.remove:hover {
+  background-color: #ff6961;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
 .data-transfer {
   width: 100%;
   padding: 12px;
@@ -577,7 +649,10 @@ select {
     flex-wrap: wrap;
   }
 
-  #tran1,#tran2,#tran3, #tran4 {
+  #tran1,
+  #tran2,
+  #tran3,
+  #tran4 {
     margin: 10px;
     margin-top: 20px;
     margin-bottom: 20px;
