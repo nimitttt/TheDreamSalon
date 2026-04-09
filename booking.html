@@ -17,7 +17,10 @@
   <body>
     <header>
       <nav class="home-nav">
-        <a href="index.html" id="title">The Dream Salon</a>
+        <a href="index.html"
+          ><img id="logo" src="assets/logo.png" alt="Logo"
+        /></a>
+        <a href="index.html" id="title">The Dream Unisex Salon</a>
         <button class="hamburger hamburger--spin" id="menu-btn" type="button">
           <span class="hamburger-box">
             <span class="hamburger-inner"></span>
@@ -44,9 +47,20 @@
         <br />
 
         <form>
-          <input id="name" class="data" type="text" placeholder="Name *" required />
+          <input
+            id="name"
+            class="data"
+            type="text"
+            placeholder="Name *"
+            required
+          />
 
-          <input id="email" class="data" type="email" placeholder="Email (Optional)" />
+          <input
+            id="email"
+            class="data"
+            type="email"
+            placeholder="Email (Optional)"
+          />
 
           <input
             id="phone"
@@ -56,41 +70,34 @@
             required
           />
 
-          <input id="locality" class="data" type="text" placeholder="Locality" />
+          <input
+            id="locality"
+            class="data"
+            type="text"
+            placeholder="Locality"
+          />
 
-          <label>Gender</label>
-          <select id="gender">
-            <option disabled selected>Select Gender</option>
-            <option>Male</option>
-            <option>Female</option>
-            <option>Other</option>
+          <label for="gender">Gender</label>
+          <select id="gender" name="gender" required>
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
           </select>
 
-          <label id="service-selector">Select Services</label>
-          <div class="dropdown-container">
-            <button
-              type="button"
-              class="dropdown-btn"
-              onclick="toggleServices()"
-            >
-              Choose Services
-            </button>
+          <label>Select Services</label>
 
-            <div class="dropdown-list" id="servicesList">
-              <label><input type="checkbox" name="service1" value="Haircut"/> Haircut</label>
-              <label><input type="checkbox" name="service1" value="Beard Trim"/> Beard Trim</label>
-              <label><input type="checkbox" name="service1" value="Hair Styling"/> Hair Styling</label>
-              <label><input type="checkbox" name="service1" value="Facial"/> Facial</label>
-              <label><input type="checkbox" name="service1" value="Head Massage"/> Head Massage</label>
-              <label><input type="checkbox" name="service1" value="Hair Color"/> Hair Color</label>
-            </div>
-          </div>
+          <div id="servicesContainer"></div>
 
           <label>Select Appointment Date</label>
-          <input id="date" type="date" class="data" required/>
+          <input id="date" type="date" class="data" required />
 
           <label>Select Appointment Time</label>
-          <input id="time" type="time" class="data" required/>
+          <input id="time" type="time" class="data" required />
+
+          <label>
+            <input type="checkbox" required />
+            I agree to receive WhatsApp updates & offers </label
+          ><br /><br />
 
           <button class="data-transfer" type="button" onclick="sendBooking1()">
             Book Appointment 📅
@@ -101,57 +108,130 @@
       <!-- Bridal Booking -->
 
       <div class="form-container" id="form2">
-        <h2 class="book-title">Bridal Appointment </h2>
+        <h2 class="book-title">Bridal Appointment</h2>
         <br />
 
         <form>
-          <input class="data" type="text" placeholder="Name *" required />
+          <input
+            id="bride-name"
+            class="data"
+            type="text"
+            placeholder="Name *"
+            required
+          />
 
-          <input class="data" type="email" placeholder="Email (Optional)" />
+          <input
+            id="bride-email"
+            class="data"
+            type="email"
+            placeholder="Email (Optional)"
+          />
 
           <input
             class="data"
             type="tel"
             placeholder="Mobile Number *"
+            id="bride-phone"
             required
           />
 
-          <input class="data" type="text" placeholder="Locality" />
-
-          <label>Gender</label>
-          <select>
-            <option>Male</option>
-            <option>Female</option>
-            <option>Other</option>
-          </select>
+          <input
+            class="data"
+            type="text"
+            placeholder="Locality"
+            id="bride-locality"
+          />
 
           <label id="service-selector">Select Services</label>
           <div class="dropdown-container">
             <button
               type="button"
               class="dropdown-btn"
-              onclick="toggleServices()"
+              onclick="toggleBridalServices()"
             >
               Choose Services
             </button>
 
             <div class="dropdown-list" id="servicesList2">
-              <label><input type="checkbox" /> Haircut</label>
-              <label><input type="checkbox" /> Beard Trim</label>
-              <label><input type="checkbox" /> Hair Styling</label>
-              <label><input type="checkbox" /> Facial</label>
-              <label><input type="checkbox" /> Head Massage</label>
-              <label><input type="checkbox" /> Hair Color</label>
+              <label
+                ><input type="checkbox" name="bridalService" value="Haircut" />
+                Haircut</label
+              >
+
+              <label
+                ><input
+                  type="checkbox"
+                  name="bridalService"
+                  value="Beard Trim"
+                />
+                Beard Trim</label
+              >
+
+              <label
+                ><input
+                  type="checkbox"
+                  name="bridalService"
+                  value="Hair Styling"
+                />
+                Hair Styling</label
+              >
+
+              <label
+                ><input type="checkbox" name="bridalService" value="Facial" />
+                Facial</label
+              >
+
+              <label
+                ><input
+                  type="checkbox"
+                  name="bridalService"
+                  value="Head Massage"
+                />
+                Head Massage</label
+              >
+
+              <label
+                ><input
+                  type="checkbox"
+                  name="bridalService"
+                  value="Hair Color"
+                />
+                Hair Color</label
+              >
             </div>
           </div>
 
-          <label>Select Appointment Date</label>
-          <input type="date" class="data" />
+          <div id="bridal-dates-section">
+            <label>Function Dates</label>
 
-          <label>Select Appointment Time</label>
-          <input type="time" class="data" />
+            <div id="date-container">
+              <div class="date-entry">
+                <input
+                  type="date"
+                  class="bride-date"
+                  name="bridal_date[]"
+                  required
+                />
 
-          <button class="data-transfer" type="submit">
+                <input
+                  type="text"
+                  name="function_name[]"
+                  placeholder="Function name (optional)"
+                  class="fun-name"
+                />
+              </div>
+            </div>
+
+            <button class="add-date" type="button" onclick="addDateField()">
+              Add Another Function Date
+            </button>
+          </div>
+
+          <button
+            class="data-transfer"
+            type="button"
+            onclick="sendBridalBooking()"
+          >
             Book Appointment 📅
           </button>
         </form>
