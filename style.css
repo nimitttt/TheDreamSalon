@@ -652,6 +652,67 @@ select {
   border-radius: 10px;
 }
 
+/* service sec */
+
+.service-main {
+  position: absolute;
+  top: 70px;
+}
+
+.service-list {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.service-list h1 {
+  text-align: center;
+}
+
+.ser-tab {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 8px;
+  margin: 20px;
+}
+
+.div1 {
+  grid-row: span 3 / span 3;
+  height: 100px;
+}
+
+.div2 {
+  grid-row: span 3 / span 3;
+  height: 100px;
+  position: relative;
+}
+
+.ser-name {
+  position: absolute;
+  top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.ser-price {
+  position: absolute;
+  bottom: 10px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.ser-img {
+  height: 100%;
+  border-radius: 8px;
+}
+
 /* media queries */
 
 @media screen and (min-width: 700px) and (max-width: 1399px) {
