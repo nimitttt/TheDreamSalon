@@ -249,7 +249,7 @@ async function sendBooking1() {
     "https://script.google.com/macros/s/AKfycbytVeLlpRkyZha9rlFUJHn7XUQ7SnfuI2B0a8O_gxrQQZuvajArHbSxb1Qdw39RDNTw/exec",
     {
       method: "POST",
-      mode:"no-cors",
+      mode: "no-cors",
       headers: {
         "Content-Type": "application/json",
       },
@@ -263,7 +263,7 @@ async function sendBooking1() {
   );
 
   fetch(
-    "https://script.google.com/macros/s/AKfycbwAVdC0FQm2Z20g3SfpEvlyR7jgJUv_LfzNkiCU7CxbQ_yDqQc6WvR5y6MPQzKbchxi/exec",
+    "https://script.google.com/macros/s/AKfycbzo52bi-uUFk1ms2zeverFxPbiOjwp8YyhMlWqhlpWMQ2iBqjQlM-JfJrVcsk3LPpra/exec",
     {
       method: "POST",
       mode: "no-cors",
@@ -320,15 +320,18 @@ function sendBridalBooking() {
 
   let locality = document.getElementById("bride-locality").value;
 
-  // collect selected services
+  let bridalPackage = document.getElementById("bridalPackage").value;
 
-  let services = [];
+  let subBridalPackage = document.getElementById("subbridalPackage").value;
+
+  // collect selected makeup
+
+  let makeupTypes = [];
 
   document
-    .querySelectorAll('input[name="bridalService"]:checked')
-
+    .querySelectorAll('input[name="makeupType"]:checked')
     .forEach((service) => {
-      services.push(service.value);
+      makeupTypes.push(service.value);
     });
 
   // collect multiple function dates
@@ -340,10 +343,18 @@ function sendBridalBooking() {
 
     let functionName = entry.querySelector(".fun-name").value;
 
-    dateEntries.push(date + " (" + functionName + ")");
+    if (date !== "") {
+      dateEntries.push(date + " (" + functionName + ")");
+    }
   });
 
-  if (name === "" || phone === "") {
+  if (
+    name === "" ||
+    phone === "" ||
+    bridalPackage === "" ||
+    subBridalPackage === "" ||
+    makeupTypes.length === 0
+  ) {
     alert("Please fill all required fields");
 
     return;
@@ -365,8 +376,14 @@ function sendBridalBooking() {
     "Locality: " +
     locality +
     "%0A" +
-    "Services: " +
-    services.join(", ") +
+    "Bridal Package: " +
+    bridalPackage +
+    "%0A" +
+    "Sub Bridal Package: " +
+    subBridalPackage +
+    "%0A" +
+    "Makeup Type: " +
+    makeupTypes.join(", ") +
     "%0A" +
     "Function Dates: " +
     dateEntries.join(", ");
@@ -403,7 +420,7 @@ document.getElementById("dateInput").setAttribute("min", today);
 async function loadBlockedSlots() {
   try {
     const response = await fetch(
-      "https://script.google.com/macros/s/AKfycbwAVdC0FQm2Z20g3SfpEvlyR7jgJUv_LfzNkiCU7CxbQ_yDqQc6WvR5y6MPQzKbchxi/exec",
+      "https://script.google.com/macros/s/AKfycbzo52bi-uUFk1ms2zeverFxPbiOjwp8YyhMlWqhlpWMQ2iBqjQlM-JfJrVcsk3LPpra/exec",
     );
 
     blockedSlotsCache = await response.json();
@@ -413,3 +430,30 @@ async function loadBlockedSlots() {
 }
 
 loadBlockedSlots();
+
+// bridal toggle makeup
+
+function toggleMakeupDropdown() {
+  const dropdown = document.getElementById("makeupDropdown");
+
+  dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
+}
+
+document.querySelectorAll('input[name="makeupType"]').forEach((checkbox) => {
+  checkbox.addEventListener("change", updateMakeupLabel);
+});
+
+function updateMakeupLabel() {
+  const selected = [];
+
+  document
+    .querySelectorAll('input[name="makeupType"]:checked')
+    .forEach((checkbox) => {
+      selected.push(checkbox.value);
+    });
+
+  const label = document.querySelector(".dropdown-toggle");
+
+  label.textContent =
+    selected.length > 0 ? selected.join(", ") : "Select Makeup Type";
+}
