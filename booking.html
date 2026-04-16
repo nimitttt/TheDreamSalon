@@ -89,10 +89,22 @@
           <div id="servicesContainer"></div>
 
           <label>Select Appointment Date</label>
-          <input id="dateInput" type="date" class="data" required />
+          <input
+            id="dateInput"
+            type="date"
+            class="data"
+            placeholder="dd/mm/yyyy"
+            required
+          />
 
           <label>Select Appointment Time</label>
-          <input id="timeInput" type="time" class="data" required />
+          <input
+            id="timeInput"
+            type="time"
+            class="data"
+            placeholder="time"
+            required
+          />
 
           <label>
             <input type="checkbox" required />
@@ -142,62 +154,75 @@
             id="bride-locality"
           />
 
-          <label id="service-selector">Select Services</label>
-          <div class="dropdown-container">
-            <button
-              type="button"
-              class="dropdown-btn"
-              onclick="toggleBridalServices()"
-            >
-              Choose Services
-            </button>
+          <div class="form-group">
+            <label for="bridalPackage">Select Bridal Package</label>
+            <select id="bridalPackage" name="bridalPackage" required>
+              <option value="">Select Package</option>
+              <option value="Basic Bridal Package">Basic Bridal Package</option>
+              <option value="Premium Bridal Package">
+                Premium Bridal Package
+              </option>
+              <option value="Luxury Bridal Package">
+                Luxury Bridal Package
+              </option>
+            </select>
+          </div>
 
-            <div class="dropdown-list" id="servicesList2">
-              <label
-                ><input type="checkbox" name="bridalService" value="Haircut" />
-                Haircut</label
-              >
+          <div class="form-group">
+            <label for="subbridalPackage">Select Sub-Bridal Package</label>
+            <select id="subbridalPackage" name="subbridalPackage" required>
+              <option value="">Select Sub-Package</option>
+              <option value="First Setting">First Setting</option>
+              <option value="Second Setting">
+                Second Setting
+              </option>
+              <option value="Final Setting">
+                Final Setting
+              </option>
+            </select>
+          </div>
 
-              <label
-                ><input
-                  type="checkbox"
-                  name="bridalService"
-                  value="Beard Trim"
-                />
-                Beard Trim</label
-              >
+          <div class="form-group">
+            <label>Select Makeup Type</label>
 
-              <label
-                ><input
-                  type="checkbox"
-                  name="bridalService"
-                  value="Hair Styling"
-                />
-                Hair Styling</label
-              >
+            <div class="multi-select-dropdown">
+              <div class="dropdown-toggle" onclick="toggleMakeupDropdown()">
+                Select Makeup
+              </div>
 
-              <label
-                ><input type="checkbox" name="bridalService" value="Facial" />
-                Facial</label
-              >
+              <div class="dropdown-options" id="makeupDropdown">
+                <label>
+                  <input type="checkbox" name="makeupType" value="HD Makeup" />
+                  HD Makeup
+                </label>
 
-              <label
-                ><input
-                  type="checkbox"
-                  name="bridalService"
-                  value="Head Massage"
-                />
-                Head Massage</label
-              >
+                <label>
+                  <input
+                    type="checkbox"
+                    name="makeupType"
+                    value="Airbrush Makeup"
+                  />
+                  Airbrush Makeup
+                </label>
 
-              <label
-                ><input
-                  type="checkbox"
-                  name="bridalService"
-                  value="Hair Color"
-                />
-                Hair Color</label
-              >
+                <label>
+                  <input
+                    type="checkbox"
+                    name="makeupType"
+                    value="Matte Makeup"
+                  />
+                  Matte Makeup
+                </label>
+
+                <label>
+                  <input
+                    type="checkbox"
+                    name="makeupType"
+                    value="Glossy Makeup"
+                  />
+                  Glossy Makeup
+                </label>
+              </div>
             </div>
           </div>
 
@@ -210,6 +235,7 @@
                   type="date"
                   class="bride-date"
                   name="bridal_date[]"
+                  placeholder="dd/mm/yyyy"
                   required
                 />
 
@@ -236,6 +262,7 @@
           </button>
         </form>
       </div>
+      <br />
     </main>
     <script src="script.js"></script>
   </body>
